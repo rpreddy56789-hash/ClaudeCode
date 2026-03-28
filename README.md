@@ -1,5 +1,3 @@
-# ClaudeCode
-
 # Vibe Coding
 
 This repository contains coding files generated from ClaudeCode. These files are structured to facilitate various coding tasks, providing an organized way to engage with the coding challenges involved in vibe coding. Each file is crafted to enhance productivity and streamline the workflow for developers looking to push the boundaries of what can be achieved with ClaudeCode.
