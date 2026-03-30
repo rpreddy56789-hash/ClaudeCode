@@ -2,15 +2,31 @@ import anthropic
 
 client = anthropic.Anthropic()  # reads ANTHROPIC_API_KEY from env
 
+COMMANDS = """
+Commands:
+  /clear    - Reset conversation history
+  /history  - Show number of messages in conversation
+  quit/exit - Exit the chatbot
+"""
+
 def chatbot():
     messages = []
-    print("Claude Chatbot (type 'quit' to exit)\n")
+    print("Claude Chatbot")
+    print(COMMANDS)
 
     while True:
         user_input = input("You: ").strip()
+
         if user_input.lower() in ("quit", "exit"):
             break
         if not user_input:
+            continue
+        if user_input.lower() == "/clear":
+            messages = []
+            print("Conversation history cleared.\n")
+            continue
+        if user_input.lower() == "/history":
+            print(f"Messages in conversation: {len(messages)}\n")
             continue
 
         messages.append({"role": "user", "content": user_input})
